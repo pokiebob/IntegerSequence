@@ -150,6 +150,7 @@ public class RangeTester {
 					System.out.println("Start: " + start);
 					System.out.println("End: " + end);
 					System.out.println("Current: " + current);
+					System.out.println("there are still more elements\n");
 				}
 			}
 
@@ -158,6 +159,7 @@ public class RangeTester {
 				System.out.println("Start: " + start);
 				System.out.println("End: " + end);
 				System.out.println("Current: " + current);
+				System.out.println("you exceeded the maximum\n");
 			} else {
 				/*passMessage(test);
 				System.out.println("Start: " + start);
