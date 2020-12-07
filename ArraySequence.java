@@ -10,7 +10,7 @@ public class ArraySequence implements IntegerSequence {
 	}
 
 	public boolean hasNext() {
-		return currentIndex <= data.length;
+		return currentIndex <= length();
 	}
 
 	//does the sequence have more elements?
@@ -20,13 +20,13 @@ public class ArraySequence implements IntegerSequence {
 			return currentIndex - 1;
 		} else {
 			throw new NoSuchElementException(
-				"currentIndex " + currentIndnex + " cannot exceed ArraySequence length " + data.length);
+				"currentIndex " + currentIndnex + " cannot exceed ArraySequence length " + length());
 		}
 
 	}       
 	//return the current value in the sequence and advances to the next element.
 	public int length() {
-
+		return data.length;
 	}     
 	//returns the total length of the sequence
 	public void reset() {
