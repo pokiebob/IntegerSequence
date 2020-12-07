@@ -10,17 +10,17 @@ public class ArraySequence implements IntegerSequence {
 	}
 
 	public boolean hasNext() {
-		return currentIndex <= length();
+		return currentIndex < length();
 	}
 
 	//does the sequence have more elements?
 	public int next() {
 		if (hasNext()) {
 			currentIndex++;
-			return currentIndex - 1;
+			return data[currentIndex - 1];
 		} else {
 			throw new NoSuchElementException(
-				"currentIndex " + currentIndnex + " cannot exceed ArraySequence length " + length());
+				"currentIndex " + currentIndex + " cannot exceed ArraySequence length " + length());
 		}
 
 	}       
@@ -35,6 +35,12 @@ public class ArraySequence implements IntegerSequence {
 	//start over from the start of the sequence
 
 	public static void main(String[] args) {
+		int[]nums = {1,3,5,0,-1,3,9};
+	    IntegerSequence as = new ArraySequence(nums);
 
+	    System.out.println("ArraySequence(array):");
+	    while(as.hasNext()){
+	      System.out.print(as.next()+", ");
+	    }
 	}
 }
