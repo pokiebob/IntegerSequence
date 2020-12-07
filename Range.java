@@ -14,5 +14,11 @@ class Range implements IntegerSequence {
 		current = start;
 	}
 
+	public void reset() {
+		current = start;
+	}
+
 	
+
+
 }
