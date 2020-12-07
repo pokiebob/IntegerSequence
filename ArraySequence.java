@@ -30,7 +30,7 @@ public class ArraySequence implements IntegerSequence {
 	}     
 	//returns the total length of the sequence
 	public void reset() {
-
+		currentIndex = 0;
 	}     
 	//start over from the start of the sequence
 
