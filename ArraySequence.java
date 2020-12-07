@@ -9,6 +9,14 @@ public class ArraySequence implements IntegerSequence {
 		currentIndex = 0;
 	}
 
+	public ArraySequence(IntegerSequence otherSeq) {
+		data = new int[otherSeq.length()];
+		for (int i = 0; i < otherSeq.length(); i++) {
+			data[i] = otherSeq.next();
+		}
+	}
+
+
 	public boolean hasNext() {
 		return currentIndex < length();
 	}
@@ -42,5 +50,15 @@ public class ArraySequence implements IntegerSequence {
 	    while(as.hasNext()){
 	      System.out.print(as.next()+", ");
 	    }
-	}
+	    System.out.println();
+
+	    IntegerSequence r = new Range(10,20);
+	    IntegerSequence as2 = new ArraySequence(r);
+	   
+	    System.out.println("ArraySequence(seq):");
+	    while(as2.hasNext()){
+	      System.out.print(as2.next()+", ");
+	    }
+	    System.out.println();
+		}
 }
