@@ -26,6 +26,26 @@ class Range implements IntegerSequence {
 		return current < end;
 	}
 
-	
+	public int next() {
+		if (hasNext()) {
+			current++;
+			return current - 1;
+		} else {
+			throw new NoSuchElementException(
+				"current value " + current + " cannot exceed end value " + end);
+		}
+	}
+
+	public static void main(String[] args) {
+		IntegerSequence r = new Range(10,20);
+	    while(r.hasNext()) {
+	      System.out.print(r.next());
+	       if( r.hasNext() ) {
+	          System.out.print( ", " );
+	       }
+	    }
+	    System.out.println();
+	}
+
 
 }
