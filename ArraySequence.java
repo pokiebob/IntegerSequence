@@ -15,6 +15,13 @@ public class ArraySequence implements IntegerSequence {
 
 	//does the sequence have more elements?
 	public int next() {
+		if (hasNext()) {
+			currentIndex++;
+			return currentIndex - 1;
+		} else {
+			throw new NoSuchElementException(
+				"currentIndex " + currentIndnex + " cannot exceed ArraySequence length " + data.length);
+		}
 
 	}       
 	//return the current value in the sequence and advances to the next element.
